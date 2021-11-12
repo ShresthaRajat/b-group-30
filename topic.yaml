@@ -2,47 +2,47 @@ group: B_Group_30
 
 members: [Rajat Shrestha, Pranav Khatri, Sanjog Chaudhary, Aashish Upadhyaya, Darpan Pokhrel]
 
-topic: Total compensation and the age first started coding
+topic: Total compensation 
 
-RQ: Is there a correlation between age 1st started to code and the total compensation (yearly)?
+RQ: Is there a correlation between age first started to code and the total compensation?
 
-null-hypothesis: There is no correlation between age since an induvidual started to code and salary
+null-hypothesis: There is no correlation between age since an induvidual started to code and total compensation
 
-alt-hypothesis: There is correlation between age since an induvidual started to code and salary
+alt-hypothesis: There is correlation between age since an induvidual started to code and total compensation
 
-dataset-url: https://data.world/technology/stack-overflow-developer-survey/file/2020-survey_results_public.csv
+dataset-url: "https://data.world/technology/stack-overflow-developer-survey/file/2020-survey_results_public.csv"
 
 columns: |
- > d <- read.csv("2020-survey_results_public.csv", header = TRUE, sep = ",")
- > colnames(d)
- [1] "Respondent"                   "MainBranch"                  
- [3] "Hobbyist"                     "Age"                         
- [5] "Age1stCode"                   "CompFreq"                    
- [7] "CompTotal"                    "ConvertedComp"               
- [9] "Country"                      "CurrencyDesc"                
- [11] "CurrencySymbol"               "DatabaseDesireNextYear"      
- [13] "DatabaseWorkedWith"           "DevType"                     
- [15] "EdLevel"                      "Employment"                  
- [17] "Ethnicity"                    "Gender"                      
- [19] "JobFactors"                   "JobSat"
- [21] "JobSeek"                      "LanguageDesireNextYear"      
- [23] "LanguageWorkedWith"           "MiscTechDesireNextYear"      
- [25] "MiscTechWorkedWith"           "NEWCollabToolsDesireNextYear"
- [27] "NEWCollabToolsWorkedWith"     "NEWDevOps"                   
- [29] "NEWDevOpsImpt"                "NEWEdImpt"                   
- [31] "NEWJobHunt"                   "NEWJobHuntResearch"          
- [33] "NEWLearn"                     "NEWOffTopic"                 
- [35] "NEWOnboardGood"               "NEWOtherComms"               
- [37] "NEWOvertime"                  "NEWPurchaseResearch"         
- [39] "NEWPurpleLink"                "NEWSOSites"                  
- [41] "NEWStuck"                     "OpSys"                       
- [43] "OrgSize"                      "PlatformDesireNextYear"      
- [45] "PlatformWorkedWith"           "PurchaseWhat"                
- [47] "Sexuality"                    "SOAccount"                   
- [49] "SOComm"                       "SOPartFreq"                  
- [51] "SOVisitFreq"                  "SurveyEase"
- [53] "SurveyLength"                 "Trans"                       
- [55] "UndergradMajor"               "WebframeDesireNextYear"      
- [57] "WebframeWorkedWith"           "WelcomeChange"               
- [59] "WorkWeekHrs"                  "YearsCode"                   
- [61] "YearsCodePro"    
+  > d <- read.csv("2020-survey_results_public.csv", header = TRUE, sep = ",")
+  > colnames(d)
+  [1] "Respondent"                   "MainBranch"                  
+  [3] "Hobbyist"                     "Age"                         
+  [5] "Age1stCode"                   "CompFreq"                    
+  [7] "CompTotal"                    "ConvertedComp"               
+  [9] "Country"                      "CurrencyDesc"                
+  [11] "CurrencySymbol"               "DatabaseDesireNextYear"      
+  [13] "DatabaseWorkedWith"           "DevType"                     
+  [15] "EdLevel"                      "Employment"                  
+  [17] "Ethnicity"                    "Gender"                      
+  [19] "JobFactors"                   "JobSat"
+  [21] "JobSeek"                      "LanguageDesireNextYear"      
+  [23] "LanguageWorkedWith"           "MiscTechDesireNextYear"      
+  [25] "MiscTechWorkedWith"           "NEWCollabToolsDesireNextYear"
+  [27] "NEWCollabToolsWorkedWith"     "NEWDevOps"                   
+  [29] "NEWDevOpsImpt"                "NEWEdImpt"                   
+  [31] "NEWJobHunt"                   "NEWJobHuntResearch"          
+  [33] "NEWLearn"                     "NEWOffTopic"                 
+  [35] "NEWOnboardGood"               "NEWOtherComms"               
+  [37] "NEWOvertime"                  "NEWPurchaseResearch"         
+  [39] "NEWPurpleLink"                "NEWSOSites"                  
+  [41] "NEWStuck"                     "OpSys"                       
+  [43] "OrgSize"                      "PlatformDesireNextYear"      
+  [45] "PlatformWorkedWith"           "PurchaseWhat"                
+  [47] "Sexuality"                    "SOAccount"                   
+  [49] "SOComm"                       "SOPartFreq"                  
+  [51] "SOVisitFreq"                  "SurveyEase"
+  [53] "SurveyLength"                 "Trans"                       
+  [55] "UndergradMajor"               "WebframeDesireNextYear"      
+  [57] "WebframeWorkedWith"           "WelcomeChange"               
+  [59] "WorkWeekHrs"                  "YearsCode"                   
+  [61] "YearsCodePro"    
