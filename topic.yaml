@@ -6,9 +6,9 @@ topic: Total compensation
 
 RQ: Is there a correlation between age first started to code and the total compensation?
 
-null-hypothesis: There is no correlation between age since an induvidual started to code and total compensation
+null-hypothesis: There is no correlation between age since an individual started to code and total compensation.
 
-alt-hypothesis: There is correlation between age since an induvidual started to code and total compensation
+alt-hypothesis: There is correlation between age since an individual started to code and total compensation
 
 dataset-url: "https://data.world/technology/stack-overflow-developer-survey/file/2020-survey_results_public.csv"
 
