@@ -4,6 +4,8 @@ members: [Rajat Shrestha, Pranav Khatri, Sanjog Chaudhary, Aashish Upadhyaya, Da
 
 topic: Total compensation and the age first started coding
 
+RQ: Is there a correlation between age 1st started to code and the total compensation (yearly)?
+
 null-hypothesis: There is no correlation between age since an induvidual started to code and salary
 
 alt-hypothesis: There is correlation between age since an induvidual started to code and salary
