@@ -7,7 +7,7 @@ names(dfTsc)[5] <- "CompTotal"
 dfTsc$Age1stCode<-as.numeric(dfTsc$Age1stCode)
 dfTsc$CompTotal<-as.numeric(dfTsc$CompTotal)
 cor(dfTsc$CompTotal,dfTsc$Age1stCode,use="pairwise.complete.obs")
-pdf("age_compensation_correlations.pdf")
+pdf("visualization.pdf")
 plot(jitter(dfTsc$CompTotal,1),dfTsc$Age1stCode,xlab="CompTotal",ylab="Age1stCode", main="Age1stCode vs Compensation")
 #plot(dfTsc$CompTotal,dfTsc$Age1stCode,xlab="Age1stCode",ylab="CompTotal",main="Age1stCode vs Compensation")
 abline(lm(dfTsc$Age1stCode~dfTsc$CompTotal))
