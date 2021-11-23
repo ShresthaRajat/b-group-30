@@ -3,16 +3,16 @@ age_compensation_correlations <- read_csv("2020-survey_results_public.csv", col_
 dfTsc<-as.data.frame(t(age_compensation_correlations))
 dfTsc<-dfTsc[-1,]
 names(dfTsc)[3] <- "Age1stCode"
-names(dfTsc)[5] <- "CompTotal"
+names(dfTsc)[5] <- "ConvertedComp"
 dfTsc$Age1stCode<-as.numeric(dfTsc$Age1stCode)
-dfTsc$CompTotal<-as.numeric(dfTsc$CompTotal)
-cor(dfTsc$CompTotal,dfTsc$Age1stCode,use="pairwise.complete.obs")
+dfTsc$ConvertedComp<-as.numeric(dfTsc$ConvertedComp)
+cor(dfTsc$ConvertedComp,dfTsc$Age1stCode,use="pairwise.complete.obs")
 pdf("visualization.pdf")
-plot(jitter(dfTsc$CompTotal,1),dfTsc$Age1stCode,xlab="CompTotal",ylab="Age1stCode", main="Age1stCode vs Compensation")
-#plot(dfTsc$CompTotal,dfTsc$Age1stCode,xlab="Age1stCode",ylab="CompTotal",main="Age1stCode vs Compensation")
-abline(lm(dfTsc$Age1stCode~dfTsc$CompTotal))
+plot(jitter(dfTsc$ConvertedComp,1),dfTsc$Age1stCode,xlab="ConvertedComp",ylab="Age1stCode", main="Age1stCode vs Compensation")
+#plot(dfTsc$ConvertedComp,dfTsc$Age1stCode,xlab="Age1stCode",ylab="ConvertedComp",main="Age1stCode vs Compensation")
+abline(lm(dfTsc$Age1stCode~dfTsc$ConvertedComp))
 
-#hist(dfTsc$CompTotal)
+#hist(dfTsc$ConvertedComp)
 
 
 
