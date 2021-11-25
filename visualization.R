@@ -2,7 +2,7 @@ library(tidyverse)
 df <- read.csv("2020-survey_results_public.csv")[1:60000,] 
 # df[, c(5)] <- sapply(df[, c(5)], as.numeric)
 # df[[8]][df[[8]] < 10000 ] <- NA
-# df[[8]][df[[8]] > 10000 ] <- NA
+# df[[8]][df[[8]] > 1000000 ] <- NA
 # df[[5]][df[[5]] > 30 ] <- NA
 # df[[5]][df[[5]] < 3 ] <- NA
 
