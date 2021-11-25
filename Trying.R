@@ -1,11 +1,17 @@
 library(tidyverse)
-df <- read.csv("2020-survey_results_public.csv")
+df <- read.csv("2020-survey_results_public.csv")[1:60000,] 
+# df[, c(5)] <- sapply(df[, c(5)], as.numeric)
+# df[[8]][df[[8]] < 10000 ] <- NA
+# df[[8]][df[[8]] > 10000 ] <- NA
+# df[[5]][df[[5]] > 30 ] <- NA
+# df[[5]][df[[5]] < 3 ] <- NA
+
 Age1stCode <- as.numeric(df[[5]])
 ConvertedComp <- df[[8]]
 cor(Age1stCode,ConvertedComp,use="pairwise.complete.obs")
 pdf("trying.pdf")
 plot(jitter(Age1stCode,1),ConvertedComp,xlab="Age first started to code",ylab="Compensation in USD", main="Age 1st Started to Code vs Total Compensation in USD")
-abline(lm(ConvertedComp~Age1stCode))
+abline(lm(Age1stCode~ConvertedComp))
 
 #print(typeof(Age1stCode))
 #print(typeof(ConvertedComp))
