@@ -2,13 +2,13 @@ library(tidyverse)
 df <- read.csv("2020-survey_results_public.csv")
 Age1stCode <- as.numeric(df[[5]])
 ConvertedComp <- df[[8]]
-cor(ConvertedComp,Age1stCode,use="pairwise.complete.obs")
-pdf("visualization.pdf")
-plot(jitter(ConvertedComp,1),Age1stCode,xlab="Total Compensation Converted to USD",ylab="Age 1st Started to Code", main="Age 1st Started to Code vs Total Compensation")
-abline(lm(Age1stCode~ConvertedComp))
+cor(Age1stCode,ConvertedComp,use="pairwise.complete.obs")
+pdf("trying.pdf")
+plot(jitter(Age1stCode,1),ConvertedComp,xlab="Age first started to code",ylab="Compensation in USD", main="Age 1st Started to Code vs Total Compensation in USD")
+abline(lm(ConvertedComp~Age1stCode))
 
-print(typeof(Age1stCode))
-print(typeof(ConvertedComp))
+#print(typeof(Age1stCode))
+#print(typeof(ConvertedComp))
 
 #hist(ConvertedComp)
 #hist(Age1stCode)
@@ -26,9 +26,9 @@ h <- hist(dt,
           col = "lightgray", 
           ylab = "Frequency",
           xlab = "Compensation", 
-          main = "Frequency Distribution of Compensation",
+          main = "Frequency Distribution of Total Compensation",
           ylim = c(dtMin,30000),
-          xlim = c(0,2000000)) #you might want to tweak this
+          xlim = c(dtMin,2000000)) #you might want to tweak this
 x <-seq(dtMin, dtMax, .1)  #creates a sequence of numbers between first 2 params
 y1 <-dnorm(x, mean=dtMean, sd=dtSd) #creates a theoretical normal distribution based on that
 
