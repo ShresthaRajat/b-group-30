@@ -4,11 +4,11 @@ members: [Rajat Shrestha, Pranav Khatri, Sanjog Chaudhary, Aashish Upadhyaya, Da
 
 topic: Total compensation 
 
-RQ: Is there a correlation between total compensation and age first started to code?
+RQ: Is there a correlation between total compensation (ConvertedComp) and age first started to code (Age1stCode)?
 
-null-hypothesis: There is no correlation between total compensation and age first started to code.
+null-hypothesis: There is no correlation between total compensation (ConvertedComp) and age first started to code (Age1stCode).
 
-alt-hypothesis: There is correlation between total compensation and age first started to code.
+alt-hypothesis: There is correlation between total compensation (ConvertedComp) and age first started to code (Age1stCode).
 
 dataset-url: "https://data.world/technology/stack-overflow-developer-survey/file/2020-survey_results_public.csv"
 

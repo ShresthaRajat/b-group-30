@@ -7,8 +7,10 @@ Age1stCode <- as.numeric(df[[5]])
 ConvertedComp <- as.numeric(df[[8]])
 cor(Age1stCode,ConvertedComp,use="pairwise.complete.obs")
 pdf("visualization.pdf")
-plot(jitter(Age1stCode,1),jitter(ConvertedComp,1),xlab="Age first started to code",ylab="Compensation in USD", main="Age 1st Started to Code vs Total Compensation in USD")
-abline(lm(ConvertedComp~Age1stCode))
+plot(jitter(Age1stCode,1),jitter(ConvertedComp,1),xlab="Age first started to code(Age1stCode)",ylab="Compensation in USD (ConvertedComp)", main="Age 1st Started to Code vs Total Compensation in USD")
+abline(lm(ConvertedComp~Age1stCode), col="red")
+# legend("topright",c("abline"),cex=.8,col=c("red"),pch=c(NA), lwd=1)
+
 
 #print(typeof(Age1stCode))
 #print(typeof(ConvertedComp))
@@ -28,8 +30,8 @@ h <- hist(dt,
           density = 10,
           col = "lightgray", 
           ylab = "Frequency",
-          xlab = "Compensation", 
-          main = "Frequency Distribution of Total Compensation",
+          xlab = "Compensation in USD (ConvertedComp)", 
+          main = "Frequency Distribution of Total Compensation (ConvertedComp)",
           ylim = c(dtMin,30000), #frequency
           xlim = c(dtMin,2000000)) #compensation values
 x <-seq(dtMin, dtMax, .1)  #creates a sequence of numbers between first 2 params
@@ -37,4 +39,6 @@ y1 <-dnorm(x, mean=dtMean, sd=dtSd) #creates a theoretical normal distribution b
 
 y1 <- y1 *diff(h$mids[1:2]) *length(dt) #a multiplier to make it fit is the histogram
 lines(x, y1, col="blue")
+legend("topright",c("Normal Distribution of Total Compensation (ConvertedComp)"),cex=.8,col=c("blue"),pch=c(NA), lwd=1)
+
 dev.off()
