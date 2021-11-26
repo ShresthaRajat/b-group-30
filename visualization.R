@@ -1,20 +1,17 @@
 library(tidyverse)
-df <- read.csv("2020-survey_results_public.csv")[1:60000,] 
-# df[, c(5)] <- sapply(df[, c(5)], as.numeric)
-# df[[8]][df[[8]] < 10000 ] <- NA
-# df[[8]][df[[8]] > 1000000 ] <- NA
-# df[[5]][df[[5]] > 30 ] <- NA
-# df[[5]][df[[5]] < 3 ] <- NA
-
+df <- read.csv("2020-survey_results_public.csv")
+df <- df[!is.na(df[[8]]), ]
+df <- df[!is.na(df[[5]]), ]
 Age1stCode <- as.numeric(df[[5]])
-ConvertedComp <- df[[8]]
-cor(ConvertedComp,Age1stCode,use="pairwise.complete.obs")
+#print(length(Age1stCode))
+ConvertedComp <- as.numeric(df[[8]])
+cor(Age1stCode,ConvertedComp,use="pairwise.complete.obs")
 pdf("visualization.pdf")
-plot(jitter(ConvertedComp,1),Age1stCode,xlab="Total Compensation Converted to USD",ylab="Age 1st Started to Code", main="Age 1st Started to Code vs Total Compensation")
-abline(lm(Age1stCode~ConvertedComp), col="red")
+plot(jitter(Age1stCode,1),jitter(ConvertedComp,1),xlab="Age first started to code",ylab="Compensation in USD", main="Age 1st Started to Code vs Total Compensation in USD")
+abline(lm(ConvertedComp~Age1stCode))
 
-print(typeof(Age1stCode))
-print(typeof(ConvertedComp))
+#print(typeof(Age1stCode))
+#print(typeof(ConvertedComp))
 
 #hist(ConvertedComp)
 #hist(Age1stCode)
@@ -32,9 +29,9 @@ h <- hist(dt,
           col = "lightgray", 
           ylab = "Frequency",
           xlab = "Compensation", 
-          main = "Frequency Distribution of Compensation",
-          ylim = c(dtMin,30000),
-          xlim = c(0,2000000)) #you might want to tweak this
+          main = "Frequency Distribution of Total Compensation",
+          ylim = c(dtMin,30000), #frequency
+          xlim = c(dtMin,2000000)) #compensation values
 x <-seq(dtMin, dtMax, .1)  #creates a sequence of numbers between first 2 params
 y1 <-dnorm(x, mean=dtMean, sd=dtSd) #creates a theoretical normal distribution based on that
 
