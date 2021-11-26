@@ -9,7 +9,7 @@ cor(Age1stCode,ConvertedComp,use="pairwise.complete.obs")
 pdf("visualization.pdf")
 plot(jitter(Age1stCode,1),jitter(ConvertedComp,1),xlab="Age first started to code(Age1stCode)",ylab="Compensation in USD (ConvertedComp)", main="Age 1st Started to Code vs Total Compensation in USD")
 abline(lm(ConvertedComp~Age1stCode), col="red")
-legend("topright",c("Trend of Age1stCode vs ConvertedComp"),cex=.8,col=c("red"),pch=c(NA), lwd=1)
+legend("topright",c("Trend"),cex=.8,col=c("red"),pch=c(NA), lwd=1)
 
 
 #print(typeof(Age1stCode))
