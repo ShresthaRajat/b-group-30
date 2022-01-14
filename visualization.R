@@ -7,10 +7,9 @@ Age1stCode <- as.numeric(df[[5]])
 ConvertedComp <- as.numeric(df[[8]])
 cor(Age1stCode,ConvertedComp,use="pairwise.complete.obs")
 pdf("visualization.pdf")
-plot(jitter(Age1stCode,1),jitter(ConvertedComp,1),xlab="Age first started to code(Age1stCode)",ylab="Compensation in USD (ConvertedComp)", main="Age 1st Started to Code vs Total Compensation in USD")
+plot(jitter(Age1stCode,1),jitter(ConvertedComp,1),xlab="Age first started to code(Age1stCode)",ylab="Compensation in USD (ConvertedComp)", main="Age 1st Started to Code vs Total Compensation in USD", col = rgb(red = 0, green = 0, blue = 0, alpha = 0.2))
+legend("topright",bg="white",  inset=c(0, 0), legend=c("Trend line"),col=c("red"),pch=c(NA), lwd=1, lty=1, xpd=NA, border="white")
 abline(lm(ConvertedComp~Age1stCode), col="red")
-legend("topright",c("Trend"),cex=.8,col=c("red"),pch=c(NA), lwd=1)
-
 
 #print(typeof(Age1stCode))
 #print(typeof(ConvertedComp))
